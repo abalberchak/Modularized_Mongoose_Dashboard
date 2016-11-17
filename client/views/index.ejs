@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mongooses Home</title>
+</head>
+<body>
+	<h1>The Mongoose Family!</h1>
+		
+		<% for (var i in mongoose) { %>
+			<h3><a href="/mongooses/<%= mongoose[i].id %>" method='get'><%= mongoose[i].name %></a></h3>
+			
+
+			
+			<form action="/mongooses/<%= mongoose[i].id %>/edit" method='get'>
+				<input type="submit" value="Edit">
+			</form>
+			<form action="/mongooses/<%= mongoose[i].id %>/destroy" method='post'>
+				<input type="submit" value="Delete">
+			</form>
+		<% } %>
+	
+
+	<form action="/mongooses/new" method='get'>
+		<input type="submit" value="Create a New Mongoose!">
+	</form>
+
+</body>
+</html>
